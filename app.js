@@ -8,5 +8,11 @@ toggleBtn.addEventListener('click', function () {
   // } else {
   //   sidebar.classList.add("show-sidebar");
   // }
+
+//The same functionality using 'toggle'
   sidebar.classList.toggle('show-sidebar');
+});
+
+closeBtn.addEventListener('click', function () {
+  sidebar.classList.remove('show-sidebar');
 });
