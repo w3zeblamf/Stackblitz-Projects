@@ -73,27 +73,26 @@ const menu = [
 	},
 ];
 
-const sectionCenter = document.querySelector('.sectionCenter');
+const sectionCenter = document.querySelector('.section-center');
 
 window.addEventListener('DOMContentLoaded', function () {
 	let displayMenu = menu.map(function (item) {
 		//console.log(item);
 
 		return `<article class="menu-item">
-    <img src="./menu-item.jpeg" alt="menu item" class="photo" />
+    <img src=${item.img} class="photo" alt=${item.title}  />
     <div class="item-info">
       <header>
-        <h4>buttermilk pancakes</h4>
-        <h4 class="price">$15</h4>
+        <h4>${item.title} </h4>
+        <h4 class="price">$${item.price} </h4>
       </header>
       <p class="item-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Voluptatem dicta quia doloremque dolores tempore, hic optio odio
-        eius dolor animi.
+      ${item.desc} 
       </p>
     </div>
   </article>`;
 	});
-
-	console.log(displayMenu);
+displayMenu = displayMenu.join('')
+	//console.log(displayMenu);
+  sectionCenter.innerHTML = displayMenu
 });
