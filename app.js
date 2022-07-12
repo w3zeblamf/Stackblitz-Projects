@@ -86,7 +86,7 @@ const btnContainer = document.querySelector(".btn-container");
 const filterBtns = document.querySelectorAll(".filter-btn");
 // display all items when page loads
 window.addEventListener("DOMContentLoaded", function () {
-  diplayMenuItems(menu);
+  displayMenuItems(menu);
 });
 
 filterBtns.forEach(function (btn) {
@@ -100,16 +100,16 @@ filterBtns.forEach(function (btn) {
       }
     });
     if (category === "all") {
-      diplayMenuItems(menu);
+      displayMenuItems(menu);
     } 
     
     else {
-      diplayMenuItems(menuCategory);
+      displayMenuItems(menuCategory);
     }
   });
 });
 
-function diplayMenuItems(menuItems) {
+function displayMenuItems(menuItems) {
   let displayMenu = menuItems.map(function (item) {
     // console.log(item);
 
