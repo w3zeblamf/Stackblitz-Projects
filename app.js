@@ -1,27 +1,13 @@
-// MDN
-// The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
-// The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images.
+// Element.getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
+// pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
+// slice extracts a section of a string without modifying original string
+//offsetTop - A Number, representing the top position of the element, in pixels
 
-//select elements
-const btn = document.querySelector('.switch-btn');
-const video = document.querySelector('.video-container');
+// ********** set date ************
 
-//Event Listener
-btn.addEventListener('click', function () {
-	if (!btn.classList.contains('slide')) {
-		btn.classList.add('slide');
-		video.pause();
-		//if buttons does not add the 'slide' class then I want to added
-	} else {
-		btn.classList.remove('slide');
-		video.play();
-	}
-});
+// ********** close links ************
 
-//preloader
+// ********** fixed navbar ************
 
-const preloader = document.querySelector('.preloader');
-
-window.addEventListener('load', function () {
-	preloader.classList.add('hide-preloader');
-});
+// ********** smooth scroll ************
+// select links
