@@ -7,9 +7,30 @@
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
 // ********** close links ************
-const navToggle = document.querySelector('nav-toggle');
-const linksContainer = document.querySelector('links-container');
-const links = document.querySelector('.links')
+const navToggle = document.querySelector('.nav-toggle');
+const linksContainer = document.querySelector('.links-container');
+const links = document.querySelector('.links');
+
+/* This approach is useful in some cases, but there is some drawbacks when you want to add a new link to the bar or delete ane. The best setup for this is to calculate de height dynamically.
+
+navToggle.addEventListener('click', function(){
+  linksContainer.classList.toggle('show-links'); 
+})*/
+
+//Using Element.getBoundingClientRect() method
+navToggle.addEventListener('click', function () {
+	const containerHeight = linksContainer.getBoundingClientRect().height;
+	const linksHeight = links.getBoundingClientRect().height;
+
+	if (containerHeight === 0) {
+		linksContainer.style.height = `${linksHeight}px`;
+	}
+  //when links already opened
+  else {
+    linksContainer.style.height = 0;
+  }
+});
+
 // ********** fixed navbar ************
 
 // ********** smooth scroll ************
