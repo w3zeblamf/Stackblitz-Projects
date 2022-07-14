@@ -74,14 +74,21 @@ scrollLinks.forEach(function (link) {
 		const id = e.currentTarget.getAttribute('href').slice(1);
 		//console.log(id);
 		const element = document.getElementById(id);
-		let position = element.offsetTop;
+
+		//calculate the heights
+		const navHeight = navbar.getBoundingClientRect().height;
+		const containerHeight = linksContainer.getBoundingClientRect().height;
+		const fixedNav = navbar.classList.contains('fixed-nav')
+		let position = element.offsetTop - navHeight;
+
+//VIDEO: 04:32:45
 		//console.log(position);
 		window.scrollTo({
-			left: 0,
+			left: 0, //scroll vertically only
 			top: position,
 		});
+		//to close the links on an smaller screen
     linksContainer.style.height = 0;
 	});
 });
 
-//VIDEO: 04:25:24
