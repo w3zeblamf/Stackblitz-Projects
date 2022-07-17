@@ -1,74 +1,74 @@
-const menu = [
-  {
-    id: 1,
-    title: "buttermilk pancakes",
-    category: "breakfast",
-    price: 15.99,
-    img: "./images/item-1.jpeg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-  },
-  {
-    id: 2,
-    title: "diner double",
-    category: "lunch",
-    price: 13.99,
-    img: "./images/item-2.jpeg",
-    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
-  },
-  {
-    id: 3,
-    title: "godzilla milkshake",
-    category: "shakes",
-    price: 6.99,
-    img: "./images/item-3.jpeg",
-    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
-  },
-  {
-    id: 4,
-    title: "country delight",
-    category: "breakfast",
-    price: 20.99,
-    img: "./images/item-4.jpeg",
-    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
-  },
-  {
-    id: 5,
-    title: "egg attack",
-    category: "lunch",
-    price: 22.99,
-    img: "./images/item-5.jpeg",
-    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
-  },
-  {
-    id: 6,
-    title: "oreo dream",
-    category: "shakes",
-    price: 18.99,
-    img: "./images/item-6.jpeg",
-    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
-  },
-  {
-    id: 7,
-    title: "bacon overflow",
-    category: "breakfast",
-    price: 8.99,
-    img: "./images/item-7.jpeg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-  },
-  {
-    id: 8,
-    title: "american classic",
-    category: "lunch",
-    price: 12.99,
-    img: "./images/item-8.jpeg",
-    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
-  },
-  {
-    id: 9,
-    title: "quarantine buddy",
-    category: "shakes",
-    price: 16.99,
-    img: "./images/item-9.jpeg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
-  },
+/* Remember to use 'strict' mode in all scripts now! 
+You can use strict mode in all your programs. It helps you to write cleaner code, 
+like preventing you from using undeclared variables. (https://www.w3schools.com/js/js_strict.asp) */
+'use strict';
+
+const months = [
+	'January', // i = [0]
+	'February', // i = [1] 
+	'March', // i = [2]
+	'April', // i = [3]
+	'May', // i = [4]
+	'June', // i = [5]
+	'July', // i = [6]
+	'August', // i = [7]
+	'September', // i = [8]
+	'October', // i = [9]
+	'November', // i = [10]
+	'December', // i = [11]
 ];
+
+const weekdays = [
+	'Sunday', // [0]
+	'Monday', // [1]
+	'Tuesday', // [2]
+	'Wednesday', // [3]
+	'Thursday', // [4]
+	'Friday', // [5]
+	'Saturday', // [6]
+];
+
+/*Remember that the months inside an array are cero based, it means that we count from zero [0] to eleven [11]: 
+Example: 
+May is moths number four [4] not five [5] inside the array
+July is moths number four [6] and so on...
+
+For weekdays is the same functionality as explained before
+*/
+
+const giveaway = document.querySelector('.giveaway');
+const deadline = document.querySelector('.deadline');
+const items = document.querySelectorAll('.deadline-format h4');
+//console.log(items);
+
+let futureDate = new Date(2020, 3, 25, 11, 38, 0);
+//let futureDate = new Date();
+// 'new Date()' use the 24 hours format
+//console.log(futureDate)
+
+//Get current year 
+const year = futureDate.getUTCFullYear()
+//console.log(year);
+
+//Get current hour 
+const hours = futureDate.getHours()
+
+//Get current minutes 
+const minutes = futureDate.getMinutes()
+
+//Get current month
+let month = futureDate.getMonth();
+month = months[month];
+//console.log(months[month]);
+
+//Get current date 
+const date = futureDate.getDate();
+//console.log(date);
+
+//Get current day
+const weekday = weekdays[futureDate.getDay()];
+//console.log(weekday);
+
+
+giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`
+
