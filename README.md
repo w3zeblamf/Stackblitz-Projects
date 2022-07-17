@@ -1,3 +1,3 @@
-# Stackblitz-Projects: Coding testing environment.
+# StackBlitz testing environment
 
-Created with StackBlitz ⚡️
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/web-platform-duyj2x)
