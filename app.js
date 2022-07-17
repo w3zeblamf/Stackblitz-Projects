@@ -5,7 +5,7 @@ like preventing you from using undeclared variables. (https://www.w3schools.com/
 
 const months = [
 	'January', // i = [0]
-	'February', // i = [1] 
+	'February', // i = [1]
 	'March', // i = [2]
 	'April', // i = [3]
 	'May', // i = [4]
@@ -41,27 +41,27 @@ const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
 //console.log(items);
 
-let futureDate = new Date(2020, 3, 25, 11, 38, 0);
+let futureDate = new Date(2022, 6, 20, 13, 30, 0);
 //let futureDate = new Date();
 // 'new Date()' use the 24 hours format
-//console.log(futureDate)
+console.log(futureDate);
 
-//Get current year 
-const year = futureDate.getUTCFullYear()
+//Get current year
+const year = futureDate.getFullYear();
 //console.log(year);
 
-//Get current hour 
-const hours = futureDate.getHours()
+//Get current hour
+const hours = futureDate.getHours();
 
-//Get current minutes 
-const minutes = futureDate.getMinutes()
+//Get current minutes
+const minutes = futureDate.getMinutes();
 
 //Get current month
 let month = futureDate.getMonth();
 month = months[month];
 //console.log(months[month]);
 
-//Get current date 
+//Get current date
 const date = futureDate.getDate();
 //console.log(date);
 
@@ -69,8 +69,7 @@ const date = futureDate.getDate();
 const weekday = weekdays[futureDate.getDay()];
 //console.log(weekday);
 
-
-giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`
+giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
 
 // future time in milliseconds (ms)
 const futureTime = futureDate.getTime();
@@ -79,7 +78,46 @@ const futureTime = futureDate.getTime();
 function getRemainingTime() {
 	const today = new Date().getTime();
 	//console.log(today);
-	
+	const t = futureTime - today;
+
+	console.log(t);
+	// 1s = 1000ms
+	// 1m = 60s
+	// 1hr = 60mins
+	// 1d = 24hr
+
+	//values in ms (How many milliseconds are in one day)
+
+	const oneDay = 24 * 60 * 60 * 1000;
+	//console.log(oneDay);
+
+	//values in hrs (How many milliseconds are in one hour)
+
+	const oneHour = 60 * 60 * 1000;
+	//console.log(oneHour);
+
+	//values in min (How many milliseconds are in one minute)
+
+	const oneMinute = 60 * 1000;
+	//console.log(oneMinute);
+
+	//calculate all values
+
+	let days = t / oneDay;
+
+	days = Math.floor(days);
+	console.log(days);
+
+	let hours = Math.floor((t % oneDay) / oneHour);
+	console.log(hours);
+
+	let minutes = Math.floor((t % oneHour) / oneMinute);
+	console.log(minutes);
+
+	let seconds = Math.floor((t % oneMinute) / 1000);
+	console.log(seconds);
+
+	//VIDEO: 05:40:50
 }
 
-getRemainingTime()
+getRemainingTime();
