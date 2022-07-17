@@ -117,7 +117,7 @@ function getRemainingTime() {
 	let seconds = Math.floor((t % oneMinute) / 1000);
 	console.log(seconds);
 
-	//VIDEO: 05:40:50
+	//VIDEO: 05:40:51
 }
 
 getRemainingTime();
