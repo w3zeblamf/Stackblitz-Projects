@@ -41,8 +41,22 @@ const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
 //console.log(items);
 
-let futureDate = new Date(2022, 6, 22, 19, 30, 0);
-//let futureDate = new Date();
+let tempDate = new Date();
+let tempYear = tempDate.getFullYear();
+let tempMonth = tempDate.getMonth();
+let tempDay = tempDate.getDate()
+
+console.log(tempDate);
+console.log(tempYear);
+console.log(tempMonth);
+console.log(tempDay)
+
+//let tempWeekDay = tempDate.getDay()
+//console.log(tempWeekDay)
+
+
+let futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
+//let futureDate = new Date(2022, 6, 22, 19, 30, 0);
 // 'new Date()' use the 24 hours format
 //console.log(futureDate);
 
@@ -69,7 +83,7 @@ const date = futureDate.getDate();
 const weekday = weekdays[futureDate.getDay()];
 //console.log(weekday);
 
-giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}`;
+giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
 
 // future time in milliseconds (ms)
 const futureTime = futureDate.getTime();
