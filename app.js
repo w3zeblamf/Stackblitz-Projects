@@ -41,10 +41,10 @@ const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
 //console.log(items);
 
-let futureDate = new Date(2022, 6, 20, 13, 30, 0);
+let futureDate = new Date(2022, 6, 22, 19, 30, 0);
 //let futureDate = new Date();
 // 'new Date()' use the 24 hours format
-console.log(futureDate);
+//console.log(futureDate);
 
 //Get current year
 const year = futureDate.getFullYear();
@@ -69,7 +69,7 @@ const date = futureDate.getDate();
 const weekday = weekdays[futureDate.getDay()];
 //console.log(weekday);
 
-giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
+giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}`;
 
 // future time in milliseconds (ms)
 const futureTime = futureDate.getTime();
@@ -80,7 +80,7 @@ function getRemainingTime() {
 	//console.log(today);
 	const t = futureTime - today;
 
-	console.log(t);
+	//console.log(t);
 	// 1s = 1000ms
 	// 1m = 60s
 	// 1hr = 60mins
@@ -106,18 +106,39 @@ function getRemainingTime() {
 	let days = t / oneDay;
 
 	days = Math.floor(days);
-	console.log(days);
+	//console.log(days);
 
 	let hours = Math.floor((t % oneDay) / oneHour);
-	console.log(hours);
+	//console.log(hours);
 
 	let minutes = Math.floor((t % oneHour) / oneMinute);
-	console.log(minutes);
+	//console.log(minutes);
 
 	let seconds = Math.floor((t % oneMinute) / 1000);
-	console.log(seconds);
+	//console.log(seconds);
 
-	//VIDEO: 05:40:51
+	// set values array;
+
+	const values = [days, hours, minutes, seconds];
+
+	function format(item) {
+		if (item < 10) {
+			return (item = `0${item}`);
+		}
+		return item;
+	}
+
+	items.forEach(function (item, index) {
+		item.innerHTML = format(values[index]);
+	});
+
+	if (t < 0) {
+		clearInterval(countdown);
+		deadline.innerHTML = `<h4 class='expired'>sorry, this giveaway has expired</h4>`
+	}
 }
 
+// countdown
+
+let countdown = setInterval(getRemainingTime, 1000);
 getRemainingTime();
