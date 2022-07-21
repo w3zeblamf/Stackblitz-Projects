@@ -22,7 +22,8 @@ form.addEventListener('submit', addItem);
 function addItem(e) {
   e.preventDefault();
 
-  console.log(grocery.value);
+  const value = grocery.value;
+  const id = new Date().getTime().toString();
 }
 // ****** LOCAL STORAGE **********
 
