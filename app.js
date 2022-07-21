@@ -15,8 +15,15 @@ let editID = '';
 
 // ****** EVENT LISTENERS **********
 
-// ****** FUNCTIONS **********
+// submit form
+form.addEventListener('submit', addItem);
 
+// ****** FUNCTIONS **********
+function addItem(e) {
+  e.preventDefault();
+
+  console.log(grocery.value);
+}
 // ****** LOCAL STORAGE **********
 
 // ****** SETUP ITEMS **********
