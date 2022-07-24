@@ -71,6 +71,9 @@ function displayAlert(text, action) {
   }, 1000);
 }
 
+//VIDEO TIME: 06:52:52 
+
 // ****** LOCAL STORAGE **********
 
 // ****** SETUP ITEMS **********
+
