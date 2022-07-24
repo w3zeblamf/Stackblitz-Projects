@@ -26,6 +26,8 @@ function addItem(e) {
   const id = new Date().getTime().toString();
 
   if (value && !editFlag) {
+    const element = document.createElement('article');
+
     //add class
     element.classList.add('grocery-item');
 
@@ -33,7 +35,7 @@ function addItem(e) {
 
     const attr = document.createAttribute('data-id');
     attr.value = id;
-    element.setAtributeNode(attr);
+    element.setAttributeNode(attr);
     element.innerHTML = `<p class="title">${value}</p>
     <div class="btn-container">
       <button class="edit-btn">
