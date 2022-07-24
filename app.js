@@ -26,8 +26,23 @@ function addItem(e) {
   const id = new Date().getTime().toString();
 
   if (value && !editFlag) {
-    const element = document.createElement('article')
-    //console.log('add item to the list');
+    //add class
+    element.classList.add('grocery-item');
+
+    //add id
+
+    const attr = document.createAttribute('data-id');
+    attr.value = id;
+    element.setAtributeNode(attr);
+    element.innerHTML = `<p class="title">item</p>
+    <div class="btn-container">
+      <button class="edit-btn">
+        <i class="fas fa-edit"></i>
+      </button>
+      <button class="delete-btn">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>`;
   } else if (value && editFlag) {
     console.log('editing');
   } else {
@@ -40,14 +55,12 @@ function displayAlert(text, action) {
   alert.textContent = text;
   alert.classList.add(`alert-${action}`);
 
-  //remove alert 
-setTimeout(function(){
-  alert.textContent = '';
-  alert.classList.remove(`alert-${action}`);
-}, 1000);
-
+  //remove alert
+  setTimeout(function () {
+    alert.textContent = '';
+    alert.classList.remove(`alert-${action}`);
+  }, 1000);
 }
-
 
 // ****** LOCAL STORAGE **********
 
