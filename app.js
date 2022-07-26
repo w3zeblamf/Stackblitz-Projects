@@ -32,7 +32,6 @@ function addItem(e) {
     element.classList.add('grocery-item');
 
     //add id
-
     const attr = document.createAttribute('data-id');
     attr.value = id;
     element.setAttributeNode(attr);
@@ -52,6 +51,10 @@ function addItem(e) {
     displayAlert('item added to the list', 'success');
     // show container
     container.classList.add('show-container');
+    // add to local storage 
+    addToLocalStorage(id, value);
+    // set back to default 
+    setBackToDefault()
   } else if (value && editFlag) {
     console.log('editing');
   } else {
@@ -71,9 +74,12 @@ function displayAlert(text, action) {
   }, 1000);
 }
 
-//VIDEO TIME: 06:52:52 
+// setBackToDefault
 
 // ****** LOCAL STORAGE **********
+function addToLocalStorage(id, value) {
+  console.log('added to local storage')
+}
 
 // ****** SETUP ITEMS **********
 
