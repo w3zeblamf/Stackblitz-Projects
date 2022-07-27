@@ -12,6 +12,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 
@@ -25,19 +26,44 @@ body {
 
 /* Menu */
 .menu {
-  background-color: red;
   width: 4rem;
   height: 4rem;
   position: fixed;
   top: 2rem;
   left: 2rem;
   z-index: 10;
-  transition: left 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 
 .menu.change {
+  transform: rotate(45deg);
   left: 15vw;
+
 }
+
+.menu-line {
+  width: 100%;
+  height: .2rem;
+  background-color: #fff;
+  margin: .3rem 0;
+  box-shadow: 0.1rem 0.1rem 0.3rem #222;
+  transition: transform .5s
+}
+
+.change .menu-line-1 {
+  transform: rotate(270deg) translateX(-0.4rem)
+}
+
+.change .menu-line-2 {
+  transform: rotate(360deg) translateY(-0.4rem)
+}
+
+/*.change .menu-line-1: The space between the clases is necessary because the lines are the children of the menu item*/
 /* End of Menu */
 
 /* Navbar */
@@ -57,6 +83,16 @@ body {
 
 .navbar.change {
   left: 0;
+}
+
+.navbar-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0;
+  color: #777;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
 }
 /* End of Navbar */
 
@@ -82,6 +118,7 @@ section.change {
   left: 15vw;
   transform: rotateY(10deg);
 }
+
 /* End of Common Section Styles */
 
-/*VIDEO: 00:09:17*/
+
