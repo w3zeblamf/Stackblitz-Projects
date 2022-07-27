@@ -1,0 +1,87 @@
+/*Common Styles */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Special Elite", cursive;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+body {
+  background-color: #ccc;
+  padding-right: 3rem;
+}
+
+/* End of Common Styles */
+
+
+/* Menu */
+.menu {
+  background-color: red;
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  transition: left 0.5s;
+}
+
+.menu.change {
+  left: 15vw;
+}
+/* End of Menu */
+
+/* Navbar */
+.navbar {
+  width: 15vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: -15vw;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0 0 4rem;
+  z-index: 10;
+  transition: left 0.5s;
+}
+
+.navbar.change {
+  left: 0;
+}
+/* End of Navbar */
+
+/* Common Section Styles */
+.wrapper {
+  width: 100%;
+  perspective: 50rem;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: #efefef;
+  position: relative;
+  left: 0;
+  margin-bottom: 3rem;
+  transform-origin: left;
+  box-shadow: 0.5rem 0.5rem 1rem #aaa;
+  transition: left 0.5s, transform 0.5s;
+}
+
+section.change {
+  left: 15vw;
+  transform: rotateY(10deg);
+}
+/* End of Common Section Styles */
+
+/*VIDEO: 00:09:17*/
