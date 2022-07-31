@@ -1,2 +1,25 @@
 /*Common Styles */
-/* common styles */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+
+.note {
+  background:yellow;
+  padding: 5px;
+}
+
+.note h4 {
+  text-align: center;
+}
+
+/* Header/logo Title */
+
