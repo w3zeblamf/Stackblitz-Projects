@@ -6,6 +6,13 @@
   width: 100%;
   max-width: 350px;
   height: 300px;
+  object-fit: cover;
+  border-radius: 10px;;
+}
+
+.gallery::after {
+  content: "";
+  width: 350px;
 }
 
 body {
@@ -31,5 +38,7 @@ body {
   align-items: center;
   padding: 20px 10px;
   max-width: 1400px;
-  margin: auto;
+  margin: 0 auto;
+  gap: 16px;
+
 }
