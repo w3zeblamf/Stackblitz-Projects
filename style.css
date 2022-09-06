@@ -1,88 +1,143 @@
+/* Common styles */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
+
+/* End of Common styles */
+
+/*** Label container styles ***/
 
 .label {
-  border: 2px solid black;
-  width: 270px;
-  margin: 20px auto;
-  padding: 0 7px;
+    border: 2px solid black;
+    width: 270px;
+    margin: 20px auto;
+    padding: 0 7px;
 }
 
+/* Header style */
+
+/* Title style */
 header h1 {
-  text-align: center;
-  margin: -4px 0;
-  letter-spacing: 0.15px
+    text-align: center;
+    margin: -4px 0;
+    letter-spacing: 0.15px;
 }
+
+/* end of Title style */
+
+
+/* Divider style */
+.divider {
+    border-bottom: 1px solid #888989;
+    margin: 2px 0;
+    /* Give the .divider selector a clear property set to right. This will clear the float property, pushing the divider and any following content down below the float text.*/
+    clear: right;
+
+}
+
+/* End of Divider style */
 
 p {
-  margin: 0;
-}
-
-.divider {
-  border-bottom: 1px solid #888989;
-  margin: 2px 0;
-  clear: right;
+    margin: 0;
 }
 
 .bold {
-  font-weight: 800;
+    font-weight: 800;
 }
 
 .right {
-  float: right;
+    float: right
 }
 
+/* End of Header style */
+
+/* Divider lg, md(medium) style */
 .lg {
-  height: 10px;
+    height: 10px;
 }
 
-.lg, .md {
-  background-color: black;
-  border: 0;
-}
-
+.lg,
 .md {
-  height: 5px;
+    background-color: black;
+    border: 0;
 }
 
+/* End of Divider lg, md style */
+
+/* Calories information style */
 .sm-text {
-  font-size: 0.85rem;
+    font-size: 0.85rem;
 }
 
 .calories-info h1 {
-  margin: -5px -2px;
-  overflow: hidden;
+    margin: -5px -2px;
+    overflow: hidden;
 }
 
 .calories-info span {
-  font-size: 1.2em;
-  margin-top: -7px;
+    font-size: 1.2em;
+    margin-top: -7px;
+
 }
 
+/* Divider md(medium) */
+.md {
+    height: 5px;
+}
+
+/* End of Divider md(medium) */
+
 .indent {
-  margin-left: 1em;
+    margin-left: 1em;
 }
 
 .dbl-indent {
-  margin-left: 2em;
+    margin-left: 2em;
 }
 
 .daily-value p:not(.no-divider) {
-  border-bottom: 1px solid #888989;
+    border-bottom: 1px solid #888989;
 }
 
+/* End of Calories information style */
+
+/* Note */
 .note {
-  font-size: 0.6rem;
-  margin: 5px 0;
-  padding: 0 8px;
-  text-indent: -8px;
+    font-size: 0.6rem;
+    margin: 5px 0;
+    padding: 0 8px;
+    text-indent: -8px;
 }
+/* End Note */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** End of Label container styles ***/
