@@ -18,9 +18,15 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button>Add</button>
-      <button>Remove</button>
+      <!-- Listen to user events in Vue -->
+      <button v-on:click="counter++">Add</button>
+      <button v-on:click="counter= counter -1">Reduce</button>
+      <!-- End of Listen to user events in Vue -->
       <p>Result: {{ counter }}</p>
+
+      <!-- v-bind is helpful diective for setting the value of an attribute -->
+      <!-- v-on takes a so-colled argument, after a colon(:), just like v-bind, took the attribute,-->
+
     </section>
   </body>
 </html>
