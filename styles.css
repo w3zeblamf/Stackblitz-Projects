@@ -1,40 +1,66 @@
-* {
-  box-sizing: border-box;
+span[class~="sr-only"] {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+  margin: -1px;
 }
 
 html {
-  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  font-family: sans-serif;
+  color: #0a0a23;
 }
 
-#app {
-  margin: 3rem auto;
+h1 {
+  max-width: 37.25rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+h1 .flex {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+}
+
+h1 .flex span:first-of-type {
+  font-size: 0.7em;
+}
+
+h1 .flex span:last-of-type {
+  font-size: 1.2em;
+}
+
+section {
   max-width: 40rem;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 0 auto;
+  border: 2px solid #d0d0d5;
 }
 
-label, input {
-  margin-bottom: 0.5rem;
-  display: block;
-  width: 100%;
+#years {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  background: #0a0a23;
+  color: #fff;
+  z-index: 999;
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+  margin: 0 -2px;
 }
 
-label {
+#years span[class] {
   font-weight: bold;
-}
-
-ul {
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
-}
-
-li {
-  margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid #ccc;
+  width: 4.5rem;
+  text-align: right;
 }
